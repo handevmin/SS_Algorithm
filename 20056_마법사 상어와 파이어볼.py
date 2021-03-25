@@ -52,13 +52,14 @@ for i in range(K):
                     new_s_board[i][j] = [new_s for i in range(4)]
                     check = list(map(lambda x: x % 2, d_board[i][j]))
 
+                    d_board_length = len(d_board[i][j])
                     new_m_board[i][j] = []
                     new_s_board[i][j] = []
                     new_d_board[i][j] = []
 
                     new_m_board[i][j] = [new_m, new_m, new_m, new_m]
                     new_s_board[i][j] = [new_s, new_s, new_s, new_s]
-                    if sum(check) == 0 or sum(check) == len(d_board[i][j]):
+                    if sum(check) == 0 or sum(check) == d_board_length:
                         new_d_board[i][j] = [0, 2, 4, 6]
                     else:
                         new_d_board[i][j] = [1, 3, 5, 7]
